@@ -1,0 +1,30 @@
+name: Mi primer pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  hello-cicd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar información del entorno
+        run: |
+          echo "Repositorio: ${{ github.repository }}"
+          echo "Rama: ${{ github.ref_name }}"
+          echo "Commit SHA: ${{ github.sha }}"
+
+      - name: Mostrar fecha y hora
+        run: date
+
+      - name: Mostrar la versión de Git
+        run: git --version
+
+      - name: Mensaje de éxito
+        run: echo "El pipeline ha terminado exitosamente."
