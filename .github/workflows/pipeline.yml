@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar Java 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -32,7 +32,7 @@ jobs:
 
       - name: Publicar Reporte de Pruebas
         uses: actions/upload-artifact@v4
-        if: always() # Esto asegura que el reporte se suba incluso si las pruebas fallan
+        if: always()
         with:
           name: reporte-pruebas
           path: target/surefire-reports/
