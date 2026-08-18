@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   hello-ci:
@@ -25,8 +28,7 @@ jobs:
           echo "================================"
 
       - name: Mostrar fecha y hora
-        # run: date
-        runer: exito de 1
+        run: exit 1
 
       - name: Mostrar versión de Git
         run: git --version
