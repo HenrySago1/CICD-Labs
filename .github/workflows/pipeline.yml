@@ -29,3 +29,10 @@ jobs:
 
       - name: Ejecutar Pruebas Unitarias
         run: mvn -B test --file pom.xml
+
+      - name: Publicar Reporte de Pruebas
+        uses: actions/upload-artifact@v4
+        if: always() # Esto asegura que el reporte se suba incluso si las pruebas fallan
+        with:
+          name: reporte-pruebas
+          path: target/surefire-reports/
