@@ -26,7 +26,7 @@ jobs:
 
       - name: Mostrar fecha y hora
         # run: date
-        run: exit 1
+        runer: exito de 1
 
       - name: Mostrar versión de Git
         run: git --version
